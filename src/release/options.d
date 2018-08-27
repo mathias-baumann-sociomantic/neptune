@@ -38,6 +38,8 @@ struct Options
 
     bool pre_release;
 
+    bool dry_run;
+
     /// metadata to be appended to the version
     string metadata;
 }
@@ -98,7 +100,10 @@ Options parseOpts ( string[] opts )
         { options.check_ancestor = false; },
         // -------------
         "metadata|m", "When set, will be appended to the version as metadata string",
-        &options.metadata
+        &options.metadata,
+        // -------------
+        "dry-run", "Only simulate running, don't actually change anything",
+        &options.dry_run
     );
 
     if (verbose)

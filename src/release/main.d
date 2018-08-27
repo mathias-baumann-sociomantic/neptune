@@ -149,7 +149,8 @@ void main ( string[] params )
         writefln("%s ...\n\t%s",
                  action.description,
                  action.command);
-        writefln("\t%s", action.execute());
+
+        writefln("\t%s", action.execute(opts.dry_run));
     }
 
     // Make sure we mention each ref only once or git push will complain

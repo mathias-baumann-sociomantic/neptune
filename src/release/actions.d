@@ -34,7 +34,7 @@ interface Action
 
     ***************************************************************************/
 
-    string execute ( );
+    string execute ( bool dry_run );
 
     /// Returns the description of the action
     string description ( ) const;
@@ -136,7 +136,7 @@ class LocalAction : Action
 
     ***************************************************************************/
 
-    override string execute ( )
+    override string execute ( bool dry_run )
     {
         import release.shellHelper;
         import std.string : strip;
